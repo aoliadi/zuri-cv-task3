@@ -1,70 +1,230 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-/* font-family: 'Open Sans', sans-serif; */
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
     outline: none;
     border: none;
     box-sizing: border-box;
-    font-family: 'Merriweather', serif;
 }
 
 a {
+    color: inherit;
+    text-decoration: underline;
     display: inline-block;
-    text-decoration: none;
 }
 
 a:hover {
-    /* display: inline-block; */
-    text-decoration: underline;
+    color: blue;
+    text-decoration: none;
 }
 
 ul {
-    /* list-style-type: none; */
+    list-style-type: none;
+}
+
+h1, h2, span {
+    font-weight: 400;
 }
 
 /* GENERAL SELECTORS */
 
+h1 {
+    text-transform: uppercase;
+}
+
 h2 {
-    font-size: 2em;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 1em;
-}
-
-h4 {
-    margin-bottom: .5em;
-}
-
-form > h4 {
-    margin-left: 1em;
-}
-
-label {
-    margin: 0 1em 0 .25em;
+    font-size: 1.25em;
     text-transform: capitalize;
-    
+}
+
+.section__heading {
+    /* border: 2px solid blueviolet; */
+    text-transform: uppercase;
+    margin: 1.5em 0 1.25em;
+    position: relative;
+}
+
+.section__heading::after {
+    content: '';
+    position: absolute;
+    top: 130%; left: 0;
+    width: 5%;
+    min-width: 50px;
+    border: 1px solid rgb(225, 225, 224);
 }
 
 /* BODY */
 
 body {
-    min-width: 100vw;
-    padding: 1.5em;
+    /* min-width: 100vw; */
     /* border: 2px solid red; */
 }
 
 /* FLEX */
 
-.{
+body, 
+.flex-container, 
+.aside__container {
     display: flex;
     flex-flow: row wrap;
-    margin: 1.5em 0;
+    /* margin: 1.5em 0; */
 }
 
 /* OTHER STYLES */
 
 .header__container {
+    background-color: rgb(107, 136, 188);
+    color: #fff;
+    text-align: center;
+    
+    padding: 2em 1.5em;
+    
+    display: grid;
+    place-content: center;
 
+    flex: 1 0 100%;
+}
+
+.header__container hr {
+    width: 10%;
+    min-width: 50px;
+    border: 1px solid #fff;
+    margin: 1em auto;
+}
+
+.header__heading {
+}
+
+.header__sub-heading {
+    font-size: .8em;
+}
+
+
+.flex-container {
+    /* border: 2px solid red; */
+    
+    margin: 0 auto;
+    padding: 0 2em;
+    
+    width: 100%;
+    max-width: 1200px;
+}
+
+.flex-container > * {
+    /* border: 2px solid blue; */
+    flex-grow: 1;
+    margin: 0 1em;
+    /* width: 100%;
+    min-width: 165px; */
+}
+
+.flex-container > *:first-child {
+    /* border: 2px solid blueviolet; */
+    flex-basis: 70%;
+    
+}
+
+.flex-container > *:last-child {
+    /* border: 2px solid blue; */
+    flex-grow: 1;
+    flex-basis: 20%;
+    min-width: 200px;
+}
+
+/* MAIN */
+
+.main__wrapper {
+    /* padding: 0 2em; */
+    /* border: 2px solid blue; */
+}
+
+/* SUMMARY */
+
+.summary__container {
+    
+}
+
+.summary__paragraph,
+.experience__activity {
+    font-size: .85em;
+    line-height: 2em;
+}
+
+/* EXPERIENCE */
+
+.experience__work-list-container {
+    /* border: 2px solid red; */
+
+}
+
+.experience__work-list-item {
+    /* border: 2px solid blue; */
+    margin: 2em 0;
+
+}
+
+.experience__position,
+.education__position {
+    font-size: 1em;
+}
+
+.experience__workplace,
+.education__workplace  {
+    /* border: 2px solid red; */
+    font-style: italic;
+}
+
+.experience__activity-container,
+.education__list-container {
+    /* border: 2px solid red; */
+    margin-left: 2em;
+    list-style-position: inside;
+    list-style-type: disc;
+}
+
+.experience__activity,
+.education__list-item,
+.contact-info__list-item, 
+.skills__list-item,
+.stack__list-item,
+.interest__list-item {
+    margin: .8em 0;
+}
+
+.education__course {
+    font-size: .85em;
+    text-transform: capitalize;
+    margin-top: .25em;
+}
+
+.education__list-container {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+/* ASIDE */
+
+.aside__container {
+    justify-content: center;
+}
+
+.aside__container > * {
+    flex: 1 1 45%;
+    width: 100%;
+    min-width: 210px;
+}
+
+.aside__list-container {
+    /* border: 2px solid darkblue; */
+    margin-bottom: 5em;
+}
+
+.contact-info__list-container {
+    padding-top: 1.5em;
+}
+
+.interest__list-item {
+    text-transform: capitalize;
 }
